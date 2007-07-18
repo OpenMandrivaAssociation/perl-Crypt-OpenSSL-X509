@@ -13,6 +13,7 @@ URL:		http://search.cpan.org/dist/%{module}
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildRequires:	libopenssl-devel
+BuildRequires:	perl(Module::Install)
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
