@@ -1,6 +1,6 @@
 %define module	Crypt-OpenSSL-X509
 %define name	perl-%{module}
-%define version 0.6
+%define version 0.7
 %define release %mkrel 1
 
 Name:		%{name}
