@@ -1,35 +1,36 @@
-%define module	Crypt-OpenSSL-X509
-%define name	perl-%{module}
-%define version 0.7
-%define release %mkrel 3
+%define upstream_name	 Crypt-OpenSSL-X509
+%define upstream_version 1.0
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Perl extension to OpenSSL's X509 API
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/%{module}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	libopenssl-devel
 BuildRequires:	perl(Module::Install)
 BuildRequires:	perl(YAML)
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This is a Perl extension to OpenSSL's X509 API. It implements a large majority
 of OpenSSL's useful X509 API.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make CFLAGS="%{optflags}"
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -44,5 +45,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/auto/Crypt
 %{_mandir}/*/*
-
-
