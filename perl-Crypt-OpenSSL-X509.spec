@@ -1,9 +1,9 @@
 %define upstream_name	 Crypt-OpenSSL-X509
-%define upstream_version 1.2
+%define upstream_version 1.3
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Perl extension to OpenSSL's X509 API
 License:	GPL+ or Artistic
