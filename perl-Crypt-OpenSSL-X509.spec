@@ -1,5 +1,5 @@
 %define upstream_name	 Crypt-OpenSSL-X509
-%define upstream_version 1.5
+%define upstream_version 1.6
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
