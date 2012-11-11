@@ -1,0 +1,12 @@
+diff -Naur -x '*~' Crypt-OpenSSL-X509-1.800.1/Makefile.PL Crypt-OpenSSL-X509-1.800.1-dont-turn-warning-into-errors//Makefile.PL
+--- Crypt-OpenSSL-X509-1.800.1/Makefile.PL	2011-01-05 19:03:35.000000000 +0100
++++ Crypt-OpenSSL-X509-1.800.1-dont-turn-warning-into-errors//Makefile.PL	2011-05-02 22:24:24.000000000 +0200
+@@ -14,7 +14,7 @@
+ cc_lib_paths('/usr/lib', '/usr/local/lib', '/usr/local/ssl/lib');
+ 
+ cc_lib_links('crypto');
+-cc_optimize_flags('-O2 -g -Wall -Werror');
++cc_optimize_flags('-O2 -g -Wall');
+ 
+ auto_install();
+ WriteAll();
