@@ -10,7 +10,7 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
-BuildRequires:	libopenssl-devel
+BuildRequires:	openssl-devel
 BuildRequires:	perl(Module::Install)
 BuildRequires:	perl(YAML)
 BuildRequires:	perl-devel
