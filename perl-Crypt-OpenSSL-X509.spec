@@ -1,5 +1,5 @@
 %define upstream_name	 Crypt-OpenSSL-X509
-%define upstream_version 1.803
+%define upstream_version 1.804
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Perl extension to OpenSSL's X509 API
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
 BuildRequires:	openssl-devel
 BuildRequires:	perl(Module::Install)
 BuildRequires:	perl(YAML)
@@ -40,3 +40,4 @@ of OpenSSL's useful X509 API.
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/auto/Crypt
 %{_mandir}/*/*
+
