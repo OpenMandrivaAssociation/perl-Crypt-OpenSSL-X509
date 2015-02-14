@@ -1,9 +1,9 @@
 %define upstream_name	 Crypt-OpenSSL-X509
-%define upstream_version 1.804
+%define upstream_version 1.806
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Perl extension to OpenSSL's X509 API
 License:	GPL+ or Artistic
@@ -25,7 +25,7 @@ of OpenSSL's useful X509 API.
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%make CFLAGS="%{optflags}"
+%make CFLAGS="%{optflags}" CC=gcc
 
 %check
 %make test
