@@ -1,3 +1,5 @@
+%define _disable_lto 1
+
 %define upstream_name	 Crypt-OpenSSL-X509
 %define upstream_version 1.806
 
@@ -10,6 +12,7 @@ License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
+Patch2:		Crypt-OpenSSL-X509-1.806-Fix-condition-negation.patch
 BuildRequires:	openssl-devel
 BuildRequires:	perl(Module::Install)
 BuildRequires:	perl(YAML)
@@ -22,10 +25,11 @@ of OpenSSL's useful X509 API.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
+%apply_patches
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-%make CFLAGS="%{optflags}" CC=gcc
+%make CC=gcc CFLAGS="%optflags"
 
 %check
 %make test

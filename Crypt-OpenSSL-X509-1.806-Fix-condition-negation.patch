@@ -1,0 +1,44 @@
+From e1117f13ef3895a738d2e6edfc288175b3677f77 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Petr=20P=C3=ADsa=C5=99?= <ppisar@redhat.com>
+Date: Wed, 11 Feb 2015 13:18:38 +0100
+Subject: [PATCH] Fix condition negation
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+GCC 5.0 correctly warned on missing parathneses in (! c > 0)
+expression. This patch fixes it.
+
+<https://github.com/dsully/perl-crypt-openssl-x509/issues/39>
+<https://bugzilla.redhat.com/show_bug.cgi?id=1190816>
+
+Signed-off-by: Petr Písař <ppisar@redhat.com>
+---
+ X509.xs | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/X509.xs b/X509.xs
+index 23f7666..32a1425 100644
+--- a/X509.xs
++++ b/X509.xs
+@@ -181,7 +181,7 @@ static HV* hv_exts(X509* x509, int no_name) {
+   sv_2mortal((SV*)RETVAL);
+   c = X509_get_ext_count(x509);
+ 
+-  if ( ! c > 0 ) {
++  if (!(c > 0)) {
+     croak("No extensions found\n");
+   }
+ 
+@@ -868,7 +868,7 @@ extension(x509, i)
+ 
+   c = X509_get_ext_count(x509);
+ 
+-  if (!c > 0) {
++  if (!(c > 0)) {
+     croak("No extensions found\n");
+   } else if (i >= c || i < 0) {
+     croak("Requested extension index out of range\n");
+-- 
+1.9.3
+
