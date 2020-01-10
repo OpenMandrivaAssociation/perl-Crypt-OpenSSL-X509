@@ -25,7 +25,7 @@ of OpenSSL's useful X509 API.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
-%apply_patches
+%autopatch -p1
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
