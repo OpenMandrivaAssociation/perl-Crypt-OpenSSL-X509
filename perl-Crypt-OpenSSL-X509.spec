@@ -10,7 +10,7 @@ Release:	4
 Summary:	Perl extension to OpenSSL's X509 API
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
 Patch2:		Crypt-OpenSSL-X509-1.806-Fix-condition-negation.patch
 BuildRequires:	openssl-devel
