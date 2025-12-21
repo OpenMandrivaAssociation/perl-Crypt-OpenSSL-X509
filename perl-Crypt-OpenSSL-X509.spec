@@ -13,6 +13,7 @@ Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DA/DANIEL/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
 Patch2:		Crypt-OpenSSL-X509-1.806-Fix-condition-negation.patch
+BuildRequires:	make
 BuildRequires:	openssl-devel
 BuildRequires:	perl(Module::Install)
 BuildRequires:	perl(YAML)
