@@ -3,4 +3,4 @@ removed_sources:
   Crypt-OpenSSL-X509-1.803.tar.gz: 0f15a474cc87a60267bc0aaa36bc59f281528cef
   Crypt-OpenSSL-X509-1.804.tar.gz: 82a9eb211cdef1bd3cfc6e29554b8586f8d27740
 sources:
-  Crypt-OpenSSL-X509-1.806.tar.gz: a2cf206e854d9e1243b786207829d7c706578a4b
+  Crypt-OpenSSL-X509-2.1.3.tar.gz: 814812b88e61d95d50976697f75c36b4087f014d
