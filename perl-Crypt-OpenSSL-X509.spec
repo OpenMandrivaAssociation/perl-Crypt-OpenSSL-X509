@@ -1,17 +1,15 @@
 %define _disable_lto 1
 
 %define upstream_name	 Crypt-OpenSSL-X509
-%define upstream_version 2.1.3
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:	1
+Version:    2.1.3
+Release:	2
 
 Summary:	Perl extension to OpenSSL's X509 API
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/dsully/perl-crypt-openssl-x509
-Source0:	https://cpan.metacpan.org/authors/id/J/JO/JONASBN/Crypt-OpenSSL-X509-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JO/JONASBN/Crypt-OpenSSL-X509-%{version}.tar.gz
 Patch2:		Crypt-OpenSSL-X509-1.806-Fix-condition-negation.patch
 BuildRequires:	make
 BuildRequires:	openssl-devel
@@ -25,7 +23,7 @@ This is a Perl extension to OpenSSL's X509 API. It implements a large majority
 of OpenSSL's useful X509 API.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 %autopatch -p1
 
 %build
